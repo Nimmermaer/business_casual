@@ -1,0 +1,27 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+<f:section name="Main">
+    <f:switch expression="{data.layout}">
+        <f:case value="1">
+            <section class="page-section cta">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 mx-auto">
+                            <div class="cta-inner text-center rounded">
+                                <h2 class="section-heading mb-4">
+                                    <span class="section-heading-upper">{data.header}</span>
+                                    <span class="section-heading-lower">{data.subheader}</span>
+                                </h2>
+                                {data.bodytext->f:format.html()}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </f:case>
+        <f:defaultCase>
+            <f:format.html>{data.bodytext}</f:format.html>
+        </f:defaultCase>
+    </f:switch>
+</f:section>
+</html>

@@ -1,0 +1,5 @@
+lib {
+    date = TEXT
+    date.data = date : U
+    date.strftime = %Y
+}

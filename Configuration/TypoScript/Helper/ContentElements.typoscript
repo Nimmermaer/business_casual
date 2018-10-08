@@ -1,0 +1,13 @@
+lib.contentElement {
+    templateRootPaths {
+        1 = EXT:business_casual/Resources/Private/Templates/ContentElements/
+    }
+
+    partialRootPaths {
+        1 =  EXT:business_casual/Resources/Private/Partials/ContentElements/
+    }
+
+    layoutRootPaths {
+        1 =  EXT:business_casual/Resources/Private/Layouts/ContentElements/
+    }
+}

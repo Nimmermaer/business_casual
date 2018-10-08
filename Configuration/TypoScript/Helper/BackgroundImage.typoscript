@@ -1,0 +1,8 @@
+temp.logoimg = IMG_RESOURCE
+temp.logoimg {
+    file {
+        import.data = levelmedia:-1, slide
+        treatIdAsReference = 1
+        import.listNum = rand
+    }
+}

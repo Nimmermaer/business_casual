@@ -1,0 +1,8 @@
+#
+# PageTS for business-casual
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:business_casual/Configuration/PageTS/RTE.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:business_casual/Configuration/PageTS/TCEFORM.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:business_casual/Configuration/PageTS/TCEMAIN.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:business_casual/Configuration/PageTS/Mod/WebLayout/BackendLayouts.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:business_casual/Configuration/PageTS/Mod/WebList/NewRecordWizard.typoscript">
