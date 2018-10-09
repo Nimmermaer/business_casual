@@ -45,7 +45,7 @@
             <div class="intro">
                 <f:for each="{files}" as="file" iteration="fileIterator">
                     <f:if condition="{fileIterator.isFirst}">
-                        <f:image class="intro-img img-fluid mb-3 mb-lg-0 rounded" image="{file}" />
+                        <f:image class="intro-img img-fluid mb-3 mb-lg-0 rounded" image="{file}"/>
                     </f:if>
                 </f:for>
                 <div class="intro-text left-0 text-center bg-faded p-5 rounded">
@@ -53,7 +53,7 @@
                         <span class="section-heading-upper">{data.header}</span>
                         <span class="section-heading-lower">{data.subheader}</span>
                     </h2>
-                  {data.bodytext->f:format.html()}
+                    {data.bodytext->f:format.html()}
 
                     <div class="intro-button mx-auto">
                         <a class="btn btn-primary btn-xl" href="#">Visit Us Today!</a>
@@ -72,7 +72,7 @@
         <div class="container">
             <f:for each="{files}" as="file" iteration="fileIterator">
                 <f:if condition="{fileIterator.isFirst}">
-                    <f:image class="img-fluid rounded about-heading-img mb-3 mb-lg-0" image="{file}" />
+                    <f:image class="img-fluid rounded about-heading-img mb-3 mb-lg-0" image="{file}"/>
                 </f:if>
             </f:for>
             <div class="about-heading-content">
@@ -102,31 +102,39 @@
             <div class="product-item">
                 <div class="product-item-title d-flex">
                     <f:if condition="{data.header_position}==right">
-                        <f:then><div class="bg-faded p-5 d-flex mr-auto rounded"></f:then>
-                        <f:else><div class="bg-faded p-5 d-flex ml-auto rounded"></f:else>
+                        <f:then>
+                            <div class="bg-faded p-5 d-flex mr-auto rounded">
+                        </f:then>
+                        <f:else>
+                            <div class="bg-faded p-5 d-flex ml-auto rounded">
+                        </f:else>
                     </f:if>
 
 
-                        <h2 class="section-heading mb-0">
-                            <span class="section-heading-upper">{data.header}</span>
-                            <span class="section-heading-lower">{data.subheader}</span>
-                        </h2>
-                    </div>
-                </div>
-                <f:for each="{files}" as="file" iteration="fileIterator">
-                    <f:if condition="{fileIterator.isFirst}">
-                        <f:image class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" image="{file}" />
-                    </f:if>
-                </f:for>
-            <f:if condition="{data.header_position}==right">
-                <f:then><div class="product-item-description d-flex ml-auto"></f:then>
-                <f:else><div class="product-item-description d-flex mr-auto"></f:else>
-            </f:if>
-                    <div class="bg-faded p-5 rounded">
-                  {data.bodytext->f:format.html()}
-                    </div>
+                    <h2 class="section-heading mb-0">
+                        <span class="section-heading-upper">{data.header}</span>
+                        <span class="section-heading-lower">{data.subheader}</span>
+                    </h2>
                 </div>
             </div>
+            <f:for each="{files}" as="file" iteration="fileIterator">
+                <f:if condition="{fileIterator.isFirst}">
+                    <f:image class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" image="{file}"/>
+                </f:if>
+            </f:for>
+            <f:if condition="{data.header_position}==right">
+                <f:then>
+                    <div class="product-item-description d-flex ml-auto">
+                </f:then>
+                <f:else>
+                    <div class="product-item-description d-flex mr-auto">
+                </f:else>
+            </f:if>
+            <div class="bg-faded p-5 rounded">
+                {data.bodytext->f:format.html()}
+            </div>
+        </div>
+        </div>
         </div>
     </section>
 </f:section>

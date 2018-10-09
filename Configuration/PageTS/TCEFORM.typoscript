@@ -1,0 +1,15 @@
+#
+# TCEFORM
+#
+TCEFORM {
+    pages {
+
+    }
+    tt_content {
+        bullets_type {
+            addItems {
+                10 = Open hours
+            }
+        }
+    }
+}

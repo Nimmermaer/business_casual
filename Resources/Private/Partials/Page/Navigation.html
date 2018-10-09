@@ -1,16 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
         <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav mx-auto">
                 <f:for each="{mainnavigation}" as="mainnavigationItem">
                     <li class="nav-item px-lg-4 {f:if(condition: mainnavigationItem.active, then:'active')}">
-                        <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}" class="nav-link text-uppercase text-expanded">
+                        <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}"
+                           title="{mainnavigationItem.title}" class="nav-link text-uppercase text-expanded">
                             {mainnavigationItem.title}
-                            <f:if condition="mainnavigationItem.active"> <span class="sr-only">(current)</span></f:if>
+                            <f:if condition="mainnavigationItem.active"><span class="sr-only">(current)</span></f:if>
                         </a>
                     </li>
                 </f:for>

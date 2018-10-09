@@ -4,10 +4,10 @@ lib.contentElement {
     }
 
     partialRootPaths {
-        1 =  EXT:business_casual/Resources/Private/Partials/ContentElements/
+        1 = EXT:business_casual/Resources/Private/Partials/ContentElements/
     }
 
     layoutRootPaths {
-        1 =  EXT:business_casual/Resources/Private/Layouts/ContentElements/
+        1 = EXT:business_casual/Resources/Private/Layouts/ContentElements/
     }
 }

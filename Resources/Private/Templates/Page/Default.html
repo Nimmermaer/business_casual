@@ -1,16 +1,11 @@
-<f:layout name="Default" />
+<f:layout name="Default"/>
 <f:section name="Main">
-
     <h1 class="site-heading text-center text-white d-none d-lg-block">
-        <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span>
-        <span class="site-heading-lower">Business Casual</span>
+        <span class="site-heading-upper text-primary mb-3">{globalHeader}</span>
+        <span class="site-heading-lower">{globalClaim}</span>
     </h1>
-
     <!-- Navigation -->
-   <f:render partial="Navigation" arguments="{_all}" />
-    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}" />
+    <f:render partial="Navigation" arguments="{_all}"/>
+    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{colPos: '0'}"/>
     <f:render partial="Footer"/>
-
-
-
 </f:section>

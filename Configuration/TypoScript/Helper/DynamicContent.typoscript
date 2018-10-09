@@ -29,21 +29,25 @@ lib.dynamicContent {
                 ifEmpty = 0
             }
         }
+
         pageUid.cObject = TEXT
         pageUid.cObject {
             field = pageUid
             ifEmpty.data = TSFE:id
         }
+
         contentFromPid.cObject = TEXT
         contentFromPid.cObject {
             data = DB:pages:{register:pageUid}:content_from_pid
             data.insertData = 1
         }
+
         wrap.cObject = TEXT
         wrap.cObject {
             field = wrap
         }
     }
+
     20 = CONTENT
     20 {
         table = tt_content
@@ -55,10 +59,12 @@ lib.dynamicContent {
             pidInList.data = register:pageUid
             pidInList.override.data = register:contentFromPid
         }
+
         stdWrap {
             dataWrap = {register:wrap}
             required = 1
         }
     }
+
     90 = RESTORE_REGISTER
 }

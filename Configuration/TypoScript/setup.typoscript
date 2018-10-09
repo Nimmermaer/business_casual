@@ -76,6 +76,33 @@ page {
                 as = mainnavigation
             }
         }
+
+        variables {
+            globalHeader = TEXT
+            globalHeader {
+                value = {$global.settings.general.header}
+            }
+
+            globalClaim = TEXT
+            globalClaim {
+                value = {$global.settings.general.claim}
+            }
+
+            globalZipandtown = TEXT
+            globalZipandtown {
+                value = {$global.settings.general.zipandtown}
+            }
+
+            globalStreet= TEXT
+            globalStreet {
+                value = {$global.settings.general.street}
+            }
+
+            globalPhone = TEXT
+            globalPhone {
+                value = {$global.settings.general.phone}
+            }
+        }
     }
 
     meta {
@@ -152,13 +179,9 @@ page {
         }
     }
 
-    includeCSSLibs {
-
-    }
-
     includeCSS {
-        business_casual_bootstrap = EXT:business_casual/Resources/Public/Css/bootstrap.css
-        business_casual_layout = EXT:business_casual/Resources/Public/Css/layout.min.css
+        business_casual_bootstrap = EXT:business_casual/Resources/Public/Css/bootstrap.min.css
+        business_casual_layout = EXT:business_casual/Resources/Public/Css/business-casual.min.css
     }
 
     includeCSSLibs {
@@ -168,22 +191,11 @@ page {
         gfonts2.external = 1
     }
 
-    includeJS {
-        business_casual_bootstrap_bundle = EXT:business_casual/Resources/Public/JavaScript/Dist/boostrap.bundle.min.js
-        business_casual_bootstrap = EXT:business_casual/Resources/Public/JavaScript/Dist/bootstrap.js
-        business_casual_jquery = EXT:business_casual/Resources/Public/JavaScript/Dist/jquery.js
-        business_casual_jquery_slim = EXT:business_casual/Resources/Public/JavaScript/Dist/jquery.slim.js
-        business_casual_scripts = EXT:business_casual/Resources/Public/JavaScript/Dist/scripts.js
-    }
-
-    includeJSFooterlibs {
-
-    }
-
     includeJSFooter {
         business_casual_scripts = EXT:business_casual/Resources/Public/JavaScript/Dist/scripts.js
     }
-    headerData{
+
+    headerData {
         1429854794594 < temp.logoimg
         1429854794594.stdWrap.wrap (
            <style>body {

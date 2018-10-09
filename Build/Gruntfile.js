@@ -1,5 +1,5 @@
-module.exports = function(grunt) {
-
+module.exports = function (grunt) {
+    const sass = require('node-sass');
     /**
      * Project configuration.
      */
@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         paths: {
             root: '../',
             resources: '<%= paths.root %>Resources/',
-            less: '<%= paths.resources %>Public/Less/',
+            sass: '<%= paths.resources %>Public/Scss/',
             css: '<%= paths.resources %>Public/Css/',
             fonts: '<%= paths.resources %>Public/Fonts/',
             img: '<%= paths.resources %>Public/Images/',
@@ -28,16 +28,25 @@ module.exports = function(grunt) {
                     beautify: false
                 },
                 files: {
-                    "<%= paths.js %>/Dist/scripts.js": [
+                    "<%= paths.js %>Dist/scripts.js": [
+                        "<%= paths.js %>Src/jquery.js",
+                        "<%= paths.js %>Src/jquery.slim.js",
+                        "<%= paths.js %>Src/bootstrap.js",
+                        "<%= paths.js %>Src/bootstrap.bundle.js",
                         "<%= paths.js %>Src/main.js"
                     ]
                 }
             }
         },
-        less: {
-            layout: {
-                src: '<%= paths.less %>layout.less',
-                dest: '<%= paths.css %>layout.css'
+        sass: {
+            options: {
+                implementation: sass,
+                sourceMap: true
+            },
+            dist: {
+                files: {
+                    '<%= paths.css %>business-casual.css':'../Resources/Public/Scss/business-casual.scss'
+                }
             }
         },
         postcss: {
@@ -54,7 +63,7 @@ module.exports = function(grunt) {
                 ]
             },
             layout: {
-                src: '<%= paths.css %>layout.css'
+                src: '<%= paths.css %>business-casual.css'
             }
         },
         cssmin: {
@@ -63,8 +72,8 @@ module.exports = function(grunt) {
                 advanced: false
             },
             layout: {
-                src: '<%= paths.css %>layout.css',
-                dest: '<%= paths.css %>layout.min.css'
+                src: '../Resources/Public/Css/business-casual.css',
+                dest: '<%= paths.css %>business-casual.min.css'
             }
         },
         image: {
@@ -83,8 +92,8 @@ module.exports = function(grunt) {
             options: {
                 livereload: true
             },
-            less: {
-                files: '<%= paths.less %>**/*.less',
+            sass: {
+                files: '<%= paths.scss %>**/*.scss',
                 tasks: ['css']
             },
             javascript: {
@@ -98,7 +107,7 @@ module.exports = function(grunt) {
      * Register tasks
      */
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
@@ -107,7 +116,7 @@ module.exports = function(grunt) {
     /**
      * Grunt update task
      */
-    grunt.registerTask('css', ['less', 'postcss', 'cssmin']);
+    grunt.registerTask('css', ['sass', 'postcss', 'cssmin']);
     grunt.registerTask('js', ['uglify']);
     grunt.registerTask('build', ['js', 'css', 'image']);
     grunt.registerTask('default', ['build']);

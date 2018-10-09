@@ -1,0 +1,13 @@
+tt_content{
+    bullets {
+        dataProcessing {
+            10 {
+                if {
+                    value = 10
+                    equals.field = bullets_type
+                    negate=1
+                }
+            }
+        }
+    }
+}

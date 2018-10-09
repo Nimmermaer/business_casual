@@ -1,0 +1,39 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:debug>{_all}</f:debug>
+<section class="page-section cta">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner text-center rounded">
+                    <h2 class="section-heading mb-5">
+                        <span class="section-heading-upper">{data.header}</span>
+                        <span class="section-heading-lower">{data.subheader}</span>
+                    </h2>
+                    <f:if condition="{bullets}">
+                        <ul class="list-unstyled list-hours mb-5 text-left mx-auto ">
+                            <f:for each="{bullets}" as="bullet">
+                                <li class="list-unstyled-item list-hours-item d-flex justify-content-center">{bullet}</li>
+                            </f:for>
+                        </ul>
+                        <p class="address mb-5">
+                            <em>
+                                <strong>{globalStreet}</strong>
+                                <br>
+                                {globalZipandtown}
+                            </em>
+                        </p>
+                        <p class="mb-0">
+                            <small>
+                                <em>Call Anytime</em>
+                            </small>
+                            <br>
+                            {globalPhone}
+                        </p>
+                    </f:if>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</html>

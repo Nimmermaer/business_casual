@@ -40,6 +40,7 @@ mod {
                         header_position = left
                     }
                 }
+
                 producttitelright {
                     iconIdentifier = content-textpic
                     title = Produkt Titel rechts
@@ -47,6 +48,14 @@ mod {
                         CType = textmedia
                         layout = 3
                         header_position = right
+                    }
+                }
+                openhours {
+                    iconIdentifier = content-table
+                    title = öffnungszeiten
+                    tt_content_defValues {
+                        CType = table
+                        bullets_type = 10
                     }
                 }
 
