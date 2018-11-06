@@ -1,4 +1,0 @@
-#
-# BACKENDLAYOUTS
-#
-<INCLUDE_TYPOSCRIPT: source="DIR:EXT:business_casual/Configuration/PageTS/Mod/WebLayout/BackendLayouts" extensions="txt">
