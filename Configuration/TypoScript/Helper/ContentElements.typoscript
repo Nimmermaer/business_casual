@@ -11,3 +11,11 @@ lib.contentElement {
         1 = EXT:business_casual/Resources/Private/Layouts/ContentElements/
     }
 }
+
+tt_content {
+    bullets {
+        dataProcessing {
+            100 = Miblu\BusinessCasual\DataProcessing\ContentElementProcessor
+        }
+    }
+}
