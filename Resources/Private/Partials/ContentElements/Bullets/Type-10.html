@@ -1,6 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:debug>{_all}</f:debug>
 <section class="page-section cta">
     <div class="container">
         <div class="row">
@@ -12,8 +11,11 @@
                     </h2>
                     <f:if condition="{bullets}">
                         <ul class="list-unstyled list-hours mb-5 text-left mx-auto ">
-                            <f:for each="{bullets}" as="bullet">
-                                <li class="list-unstyled-item list-hours-item d-flex justify-content-center">{bullet}</li>
+                            <f:for each="{bullets}" key="itemKey" as="bullet" >
+                                <f:if condition="{itemKey}=={Bullets.key}">
+                                    <f:then><li class="list-unstyled-item list-hours-item d-flex justify-content-center today">{bullet}</li></f:then>
+                                    <f:else><li class="list-unstyled-item list-hours-item d-flex justify-content-center">{bullet}</li></f:else>
+                                </f:if>
                             </f:for>
                         </ul>
                         <p class="address mb-5">
